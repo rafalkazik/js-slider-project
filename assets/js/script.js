@@ -42,7 +42,7 @@ const initEvents = function(imagesList, sliderRootElement) {
 
     // todo:
     // utwórz event o nazwie [click], który ma uruchomić event [js-slider-close]
-    // tylko wtedy gdy użytkownik kliknie w [.js-slider__zoom]
+    // tylko wtedy, gdy użytkownik kliknie w [.js-slider__zoom]
     const zoom = sliderRootElement.querySelector('.js-slider__zoom');
     
 }
@@ -71,11 +71,11 @@ const initCustomEvents = function(imagesList, sliderRootElement, imagesSelector)
 
 const onImageClick = function(event, sliderRootElement, imagesSelector) {
     // todo:  
-    // 1. dodać klasę [js-slider--active], aby pokazać całą sekcję
+    // 1. dodać klasę [.js-slider--active], aby pokazać całą sekcję
     // 2. wyszukać ściężkę do klikniętego elementu i wstawić do [.js-slider__image]
     // 3. pobrać nazwę grupy zapisaną w dataset klikniętego elementu
     // 4. wyszukać wszystkie zdjęcia należące do danej grupy
-    // 5. utworzyć na podsawie elementu [.js-slider__thumbs-item--prototype] zawartość dla [.js-slider__thumbs]
+    // 5. utworzyć na podstawie elementu [.js-slider__thumbs-item--prototype] zawartość dla [.js-slider__thumbs]
     // 6. zaznaczyć przy pomocy klasy [.js-slider__thumbs-image--current], który element jest aktualnie wyświetlany
     
 }
@@ -86,10 +86,10 @@ const onImageNext = function(event) {
     
     // todo:
     // 1. wyszukać aktualny wyświetlany element przy pomocy [.js-slider__thumbs-image--current]
-    // 2. znaleźć element następny do wyświetlenie względem drzewa DOM
-    // 3. sprawdzić czy ten element istnieje
+    // 2. znaleźć element następny do wyświetlenie względem drzewa DOM dla [.js-slider__thumbs]
+    // 3. sprawdzić czy ten element istnieje - jeśli nie to [.nextElementSibling] zwróci [null]
     // 4. przełączyć klasę [.js-slider__thumbs-image--current] do odpowiedniego elementu
-    // 5. podmienić atrybut src dla [.js-slider__image]
+    // 5. podmienić atrybut o nazwie [src] dla [.js-slider__image]
 }
 
 const onImagePrev = function(event) {
@@ -98,7 +98,7 @@ const onImagePrev = function(event) {
     
     // todo:
     // 1. wyszukać aktualny wyświetlany element przy pomocy [.js-slider__thumbs-image--current]
-    // 2. znaleźć element poprzedni do wyświetlenie względem drzewa DOM
+    // 2. znaleźć element poprzedni do wyświetlenie względem drzewa DOM dla [.js-slider__thumbs]
     // 3. sprawdzić czy ten element istnieje i czy nie posiada klasy [.js-slider__thumbs-item--prototype]
     // 4. przełączyć klasę [.js-slider__thumbs-image--current] do odpowiedniego elementu
     // 5. podmienić atrybut src dla [.js-slider__image]
