@@ -39,7 +39,7 @@ Natomiast kod HTML, który będziemy wykorzystywać do pokazów slajdów prezent
 
 > Nazwa grupy jest przechowywana w atrybucie `data-slider-group-name` i jest generowana automatycznie przez JS, aby zasymulować zmieniający się kod HTML. 
 
-Efekt po klinięciu, w któryś z obazów na stornie powinien wyglądać jak na poniższym obrazie
+Efekt po klinięciu, w któryś z obazów na stronie powinien wyglądać jak na poniższym obrazie
 
 ![](./assets/img/img1.png)
 
@@ -71,7 +71,7 @@ const fireCustomEvent = function(element, name) {
 
 Dla ułatwienia funkcja ta posiada `console.log`, która prezentuje nam informacje jaki event jest odpalany i na jakim elemencie.
 
-Zauważ również, że funkcja ta przyjmuje dwa parametry. Pierwsy to element na jakim ma być wywołany event, a drugi to jego nazwa.
+Zauważ również, że funkcja ta przyjmuje dwa parametry. Pierwszy to element na jakim ma być wywołany event, a drugi to jego nazwa.
 
 > Zajrzyj do pliku `./assets/js/script.js`, w którym masz opisane działania, które są niezbędne do wykonania zadania.
 
@@ -85,4 +85,4 @@ Możesz spróbować napisać kod, który pozwoli przełączać obrazki w niesko�
 
 ### Zadanie dodatkowe 2
 
-Tworzymy kod, który automatycznie, co zadaną ilość czasu sam automatycznie przełącza obrazki.
+Tworzymy kod, który automatycznie, co zadaną ilość czasu sam przełącza obrazki.
