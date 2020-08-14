@@ -29,19 +29,19 @@ const initEvents = function(imagesList, sliderRootElement) {
     });
 
     // todo: 
-    // utwórz event o nazwie [click], który ma uruchomić event [js-slider-img-next]
+    // utwórz nasłuchiwanie eventu o nazwie [click], który ma uruchomić event [js-slider-img-next]
     // na elemencie [.js-slider__nav--next]
     const navNext = sliderRootElement.querySelector('.js-slider__nav--next');
     
 
     // todo:
-    // utwórz event o nazwie [click], który ma uruchomić event [js-slider-img-pre]
+    // utwórz nasłuchiwanie eventu o nazwie [click], który ma uruchomić event [js-slider-img-pre]
     // na elemencie [.js-slider__nav--prev]
     const navPrev = sliderRootElement.querySelector('.js-slider__nav--prev');
     
 
     // todo:
-    // utwórz event o nazwie [click], który ma uruchomić event [js-slider-close]
+    // utwórz nasłuchiwanie eventu o nazwie [click], który ma uruchomić event [js-slider-close]
     // tylko wtedy, gdy użytkownik kliknie w [.js-slider__zoom]
     const zoom = sliderRootElement.querySelector('.js-slider__zoom');
     
@@ -72,7 +72,7 @@ const initCustomEvents = function(imagesList, sliderRootElement, imagesSelector)
 const onImageClick = function(event, sliderRootElement, imagesSelector) {
     // todo:  
     // 1. dodać klasę [.js-slider--active], aby pokazać całą sekcję
-    // 2. wyszukać ściężkę do klikniętego elementu i wstawić do [.js-slider__image]
+    // 2. wyszukać ściężkę (atrybut [src]) do klikniętego elementu i wstawić do [.js-slider__image]
     // 3. pobrać nazwę grupy zapisaną w dataset klikniętego elementu
     // 4. wyszukać wszystkie zdjęcia należące do danej grupy
     // 5. utworzyć na podstawie elementu [.js-slider__thumbs-item--prototype] zawartość dla [.js-slider__thumbs]
@@ -101,7 +101,7 @@ const onImagePrev = function(event) {
     // 2. znaleźć element poprzedni do wyświetlenie względem drzewa DOM dla [.js-slider__thumbs]
     // 3. sprawdzić czy ten element istnieje i czy nie posiada klasy [.js-slider__thumbs-item--prototype]
     // 4. przełączyć klasę [.js-slider__thumbs-image--current] do odpowiedniego elementu
-    // 5. podmienić atrybut src dla [.js-slider__image]
+    // 5. podmienić atrybut [src] dla [.js-slider__image]
 }
 
 const onClose = function(event) {
