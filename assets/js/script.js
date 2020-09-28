@@ -35,7 +35,7 @@ const initEvents = function(imagesList, sliderRootElement) {
     
 
     // todo:
-    // utwórz nasłuchiwanie eventu o nazwie [click], który ma uruchomić event [js-slider-img-pre]
+    // utwórz nasłuchiwanie eventu o nazwie [click], który ma uruchomić event [js-slider-img-prev]
     // na elemencie [.js-slider__nav--prev]
     const navPrev = sliderRootElement.querySelector('.js-slider__nav--prev');
     
