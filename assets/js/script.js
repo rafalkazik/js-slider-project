@@ -74,7 +74,7 @@ const onImageClick = function(event, sliderRootElement, imagesSelector) {
     // 1. dodać klasę [.js-slider--active], aby pokazać całą sekcję
     // 2. wyszukać ściężkę (atrybut [src]) do klikniętego elementu i wstawić do [.js-slider__image]
     // 3. pobrać nazwę grupy zapisaną w dataset klikniętego elementu
-    // 4. wyszukać wszystkie zdjęcia należące do danej grupy
+    // 4. wyszukać wszystkie zdjęcia należące do danej grupy, które wykorzystasz do osadzenia w dolnym pasku
     // 5. utworzyć na podstawie elementu [.js-slider__thumbs-item--prototype] zawartość dla [.js-slider__thumbs]
     // 6. zaznaczyć przy pomocy klasy [.js-slider__thumbs-image--current], który element jest aktualnie wyświetlany
     
