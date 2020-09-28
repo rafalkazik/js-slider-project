@@ -51,7 +51,7 @@ Nasze rozwiązanie ma się opierać w głównej mierze na własnych eventach (Cu
 
 * **js-slider-img-next** - event, który jest uruchamiany po klinięciu w prawą strzałkę na stronie i ma pokazać kolejny obrazek z dostępny w miniaturach o ile w ogóle stnieje.
 
-* **js-slider-img-next** - podobnie jak wyżej tylko chodzi o lewą strzałkę
+* **js-slider-img-prev** - podobnie jak wyżej tylko chodzi o lewą strzałkę
 
 * **js-slider-close** - event, który jest uruchamiany po klinięciu na wolną przestrzeń wokół prezentowanego zdjęcia czyli w element `.js-slider__zoom` (i tylko w ten element - trzeba uważasz na propagację event-ów).
 
