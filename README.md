@@ -1,3 +1,11 @@
+> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
+> 
+> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+
+&nbsp;
+
+
+
 # JavaScript: Zdarzenia
 
 Otrzymaliśmy zadanie, aby utworzyć pokaz slajdów (galeria), który będzie uruchamiany po klinięciu w element `<figure>`, który zawiera element `<img>`. 
@@ -86,3 +94,11 @@ Możesz spróbować napisać kod, który pozwoli przełączać obrazki w niesko�
 ### Zadanie dodatkowe 2
 
 Tworzymy kod, który automatycznie, co zadaną ilość czasu sam przełącza obrazki.
+
+
+
+&nbsp;
+
+> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
+> 
+> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
