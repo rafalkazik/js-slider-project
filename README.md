@@ -51,6 +51,12 @@ Efekt po klinięciu, w któryś z obazów na stronie powinien wyglądać jak na 
 
 ![](./assets/img/img1.png)
 
+&nbsp;
+
+> **Uwaga!** Celem tego projektu jest odnalezienie się w cudzym kodzie i wykonanie powierzonego zadania. Pamiętaj, że nad projektem zazwyczaj pracuje kilka osób, z różnym doświadczeniem (junior, regular, senior, a nawet lead czy architekt). To powoduje, że miejscami kod może być bardziej skomplikowany. Nie chodzi o to, abyś był w stanie sam taki napisać tylko móc go na tyle rozumieć, aby wykonać swoją część pracy.
+
+&nbsp;
+
 ## Implementacja
 
 Nasze rozwiązanie ma się opierać w głównej mierze na własnych eventach (CustomEvent), których nazwy są następujące:
