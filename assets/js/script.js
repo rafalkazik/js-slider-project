@@ -50,7 +50,7 @@ const initEvents = function (imagesList, sliderRootElement) {
   const zoom = sliderRootElement.querySelector(".js-slider__zoom");
 
   zoom.addEventListener("click", function (e) {
-    if (e.isTrusted) {
+    if (e.target === zoom) {
       fireCustomEvent(zoom, "js-slider-close");
     }
   });
@@ -90,6 +90,7 @@ const onImageClick = function (event, sliderRootElement, imagesSelector) {
   // 4. wyszukać wszystkie zdjęcia należące do danej grupy, które wykorzystasz do osadzenia w dolnym pasku
   // 5. utworzyć na podstawie elementu [.js-slider__thumbs-item--prototype] zawartość dla [.js-slider__thumbs]
   // 6. zaznaczyć przy pomocy klasy [.js-slider__thumbs-image--current], który element jest aktualnie wyświetlany
+
   sliderRootElement.classList.add("js-slider--active");
 
   const clickedImgSrc =
@@ -101,7 +102,6 @@ const onImageClick = function (event, sliderRootElement, imagesSelector) {
 
   const groupOfClickedImg = event.currentTarget.dataset.sliderGroupName;
 
-  console.log(groupOfClickedImg);
   const niceGroup = document.querySelectorAll(
     '[data-slider-group-name="nice"]'
   );
@@ -111,29 +111,38 @@ const onImageClick = function (event, sliderRootElement, imagesSelector) {
   );
   const goodGroupArr = [...goodGroup];
 
-  //check current img
-  const isCurrentImg = function (event) {
-    event.target.firstElementChild.classList.add(
-      "js-slider__thumbs-image--current"
-    );
-  };
-
-  isCurrentImg(event);
-
   //nice or good group check
   const isNiceOrGoodGroup = function () {
     const sliderPrototype = document.querySelector(".js-slider__thumbs");
+    const currentMainImgSrc = document
+      .querySelector(".js-slider__image")
+      .getAttribute("src");
+
     if (event.currentTarget.dataset.sliderGroupName === "nice") {
-      niceGroupArr.forEach(function (item, index) {
-        let niceGroupImg = item.firstElementChild;
-        sliderPrototype.appendChild(niceGroupImg);
-        niceGroupImg.classList.add("js-slider__thumbs-image");
+      niceGroup.forEach(function (item, index) {
+        const niceGroupImg = item.firstElementChild.getAttribute("src");
+        const niceGroupNewImg = document.createElement("img");
+        niceGroupNewImg.setAttribute("src", niceGroupImg);
+        sliderPrototype.appendChild(niceGroupNewImg);
+        niceGroupNewImg.classList.add("js-slider__thumbs-image");
+        if (currentMainImgSrc === niceGroupImg) {
+          niceGroupNewImg.classList.add("js-slider__thumbs-image--current");
+        } else if (currentMainImgSrc !== niceGroupImg) {
+          niceGroupNewImg.classList.remove("js-slider__thumbs-image--current");
+        }
       });
     } else if (event.currentTarget.dataset.sliderGroupName === "good") {
-      goodGroupArr.forEach(function (item, index) {
-        let goodGroupImg = item.firstElementChild;
-        sliderPrototype.appendChild(goodGroupImg);
-        goodGroupImg.classList.add("js-slider__thumbs-image");
+      goodGroup.forEach(function (item, index) {
+        const goodGroupImg = item.firstElementChild.getAttribute("src");
+        const goodGroupNewImg = document.createElement("img");
+        goodGroupNewImg.setAttribute("src", goodGroupImg);
+        sliderPrototype.appendChild(goodGroupNewImg);
+        goodGroupNewImg.classList.add("js-slider__thumbs-image");
+        if (currentMainImgSrc === goodGroupImg) {
+          goodGroupNewImg.classList.add("js-slider__thumbs-image--current");
+        } else if (currentMainImgSrc !== goodGroupImg) {
+          goodGroupNewImg.classList.remove("js-slider__thumbs-image--current");
+        }
       });
     }
   };
@@ -235,6 +244,14 @@ const onClose = function (event) {
   const sliderRootSelector = ".js-slider";
   const sliderRootElement = document.querySelector(sliderRootSelector);
   sliderRootElement.classList.remove("js-slider--active");
-  const sliderPrototype = document.querySelector(".js-slider__thumbs");
-  const gallerySlider = sliderPrototype.querySelectorAll(".gallery__image");
+
+  const removeSliderImages = function () {
+    const sliderPrototype = document.querySelectorAll(
+      ".js-slider__thumbs-image"
+    );
+    sliderPrototype.forEach(function (item) {
+      item.remove();
+    });
+  };
+  removeSliderImages();
 };
