@@ -121,9 +121,15 @@ const onImageClick = function (event, sliderRootElement, imagesSelector) {
     if (event.currentTarget.dataset.sliderGroupName === "nice") {
       niceGroup.forEach(function (item, index) {
         const niceGroupImg = item.firstElementChild.getAttribute("src");
+
+        const niceGroupPrototype = document.createElement("figure");
+        niceGroupPrototype.classList.add("js-slider__thumbs-item");
+
         const niceGroupNewImg = document.createElement("img");
         niceGroupNewImg.setAttribute("src", niceGroupImg);
-        sliderPrototype.appendChild(niceGroupNewImg);
+        sliderPrototype.appendChild(niceGroupPrototype);
+        niceGroupPrototype.appendChild(niceGroupNewImg);
+
         niceGroupNewImg.classList.add("js-slider__thumbs-image");
         if (currentMainImgSrc === niceGroupImg) {
           niceGroupNewImg.classList.add("js-slider__thumbs-image--current");
@@ -134,9 +140,15 @@ const onImageClick = function (event, sliderRootElement, imagesSelector) {
     } else if (event.currentTarget.dataset.sliderGroupName === "good") {
       goodGroup.forEach(function (item, index) {
         const goodGroupImg = item.firstElementChild.getAttribute("src");
+
+        const goodGroupPrototype = document.createElement("figure");
+        goodGroupPrototype.classList.add("js-slider__thumbs-item");
+
         const goodGroupNewImg = document.createElement("img");
         goodGroupNewImg.setAttribute("src", goodGroupImg);
-        sliderPrototype.appendChild(goodGroupNewImg);
+        sliderPrototype.appendChild(goodGroupPrototype);
+        goodGroupPrototype.appendChild(goodGroupNewImg);
+
         goodGroupNewImg.classList.add("js-slider__thumbs-image");
         if (currentMainImgSrc === goodGroupImg) {
           goodGroupNewImg.classList.add("js-slider__thumbs-image--current");
@@ -163,23 +175,32 @@ const onImageNext = function (event) {
   const currentElement = document.querySelector(
     ".js-slider__thumbs-image--current"
   );
-  const siblingOfCurrentElement = currentElement.nextElementSibling;
+
+  const sliderThumbs = document.querySelector(".js-slider__thumbs");
+
+  const currentElementParent = currentElement.parentElement;
+  const figureSibling = currentElementParent.nextElementSibling;
+  const figureSiblingChildren = figureSibling.children[0];
+
   const prototypeElement = document.querySelector(
     ".js-slider__thumbs-item--prototype"
   );
   const prototypeElementSibling = prototypeElement.nextElementSibling;
+  const prototypeElementSiblingChildren = prototypeElementSibling.children[0];
 
-  if (siblingOfCurrentElement !== null) {
-    const siblingSrcAtt = siblingOfCurrentElement.getAttribute("src");
+  console.log(figureSiblingChildren);
+
+  if (currentElementParent !== sliderThumbs.lastChild) {
+    const siblingSrcAtt = figureSiblingChildren.getAttribute("src");
     const sliderImage = document
       .querySelector(".js-slider__image")
       .setAttribute("src", siblingSrcAtt);
 
     currentElement.classList.remove("js-slider__thumbs-image--current");
-    siblingOfCurrentElement.classList.add("js-slider__thumbs-image--current");
-  } else if (siblingOfCurrentElement === null) {
-    const firstImgSlider = prototypeElementSibling;
-    const siblingSrcAtt = prototypeElementSibling.getAttribute("src");
+    figureSiblingChildren.classList.add("js-slider__thumbs-image--current");
+  } else if (currentElementParent === sliderThumbs.lastChild) {
+    const firstImgSlider = prototypeElementSiblingChildren;
+    const siblingSrcAtt = prototypeElementSiblingChildren.getAttribute("src");
     const sliderImage = document
       .querySelector(".js-slider__image")
       .setAttribute("src", siblingSrcAtt);
@@ -247,10 +268,14 @@ const onClose = function (event) {
 
   const removeSliderImages = function () {
     const sliderPrototype = document.querySelectorAll(
-      ".js-slider__thumbs-image"
+      ".js-slider__thumbs-item"
     );
     sliderPrototype.forEach(function (item) {
-      item.remove();
+      if (item.className.includes("js-slider__thumbs-item--prototype")) {
+        console.log("ok");
+      } else {
+        item.remove();
+      }
     });
   };
   removeSliderImages();
