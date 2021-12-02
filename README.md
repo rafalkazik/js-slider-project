@@ -6,7 +6,7 @@
 
 This project was created to develop and improve my skills in JavaScript Events.
 
-Check live version: **[LIVE]()**
+Check live version: **[LIVE](https://rafalkazik.github.io/js-slider-project/)**
 
 In this task, my job was to create event:
 
