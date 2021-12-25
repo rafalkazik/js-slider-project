@@ -1,6 +1,6 @@
 ![](./assets/applab-banner.png)
 
-# JavaScript DOM
+# JavaScript Events
 
 ## :technologist: Technologies and metodologies
 
